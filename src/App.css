@@ -1,38 +1,45 @@
-.App {
+.logo {
+  width: 100px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app_input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(238, 238, 238);
+}
+.app_input:focus {
+  outline: none;
+  border: 1px solid rgb(190, 190, 190);
+}
+.app_label {
+  color: black;
+  font-size: 12px;
+}
+.form_section {
+  background-color: rgb(238, 238, 238);
+  padding: 5px;
+  border-radius: 5px;
+  width: fit-content;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.app_primary_button {
+  background-color: #6bbd8c;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
   color: white;
+  padding: 10px 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.app_heading {
+  text-transform: uppercase;
+  text-align: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.action_btn {
+  background-color: #6bbd8c2d;
+  border: none;
+  border-radius: 5px;
+  color: #4b9a6b;
 }
