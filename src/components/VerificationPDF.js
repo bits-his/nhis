@@ -19,9 +19,9 @@ const styles = StyleSheet.create({
 })
 
 // Create Document Component
-export const VerificationPDF = ({ data=[] }) => (
+export const VerificationPDF = ({ data}) => (
   <Document>
-    {data.map((item, index) => (
+   
 
       <Page size="A4" style={styles.page}>
         <View style={{ display: 'flex', flexDirection: 'row' }}>
@@ -36,7 +36,7 @@ export const VerificationPDF = ({ data=[] }) => (
           </View>
         </View>
         <View style={{ fontSize: 10, marginTop: 10 }}>
-          <Text>NHIS #:{item.type}</Text>
+          <Text>NHIS #:{data.Type}</Text>
         </View>
         <View>
           <View style={{ borderBottom: '1px solid black', marginTop: 10 }}>

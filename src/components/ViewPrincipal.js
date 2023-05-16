@@ -7,22 +7,22 @@ import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer'
 import { VerificationPDF } from './VerificationPDF'
 function ViewPrincipal() {
     // const params = useParams()
-    const [loading, setLoading] = useState(false)
+    // const [loading, setLoading] = useState(false)
     const [data, setData] = useState([])
     const query = useQuery()
     const id = query.get('id')
     useEffect(() => {
-        setLoading(true)
+        // setLoading(true)
         fetch(
             `http://localhost:34567/api/principalsDependants?id=${id}`,
         )
             .then((response) => response.json())
             .then((data) => {
-                setLoading(false)
+                // setLoading(false)
                 setData(data.results)
             })
             .catch((err) => {
-                setLoading(false)
+                // setLoading(false)
                 console.log(err)
             })
     }, [id])
