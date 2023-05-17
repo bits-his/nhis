@@ -30,9 +30,8 @@ function VerificationList() {
 
     const searchPrincipal = useCallback(() => {
         fetch(
-            `https://yge.wvi.mybluehost.me/test/nhis-server/api/principals?name=${search}`,
+            `https://yge.wvi.mybluehost.me/test/nhis-server/api/search-principal?name=${search}`,
             // `http://localhost:34567/api/search-principal?name=${search}`
-
         )
             .then((response) => response.json())
             .then((data) => {
