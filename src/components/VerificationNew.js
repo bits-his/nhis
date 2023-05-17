@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../images/logo.PNG'
+import logo from '../images/logo.png'
 import { Col, Row } from 'reactstrap'
 export default function VerificationNew() {
   return (

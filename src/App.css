@@ -43,3 +43,20 @@
   border-radius: 5px;
   color: #4b9a6b;
 }
+@media (max-width: 767px) {
+  .app_heading {
+    font-size: 15px;
+  }
+  .web_div {
+    display: none !important;
+  }
+
+  .searchhh{
+    /* margin-top: -100px !important; */
+  }
+}
+@media (min-width: 767px) {
+  .mobile_div {
+    display: none !important;
+  }
+}
