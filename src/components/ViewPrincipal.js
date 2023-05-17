@@ -76,7 +76,7 @@ function ViewPrincipal() {
                 <Col md={6} sm={6} xs={6} lg={6}>
                     <div style={{ float: 'right' }}>
                         <PDFDownloadLink
-                            document={<VerificationPDF />}
+                            document={<VerificationPDF data={data} id={id}/>}
                             fileName="VerificationPDF"
                         >
                             {({ loading }) =>

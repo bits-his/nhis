@@ -28,9 +28,9 @@ export const VerificationPDF = ({ data = [], id }) => {
   const children = data.filter(a => a.EntityType.includes('CHILD'))
 
   const qrCodeOptions = {
-    width: 256,                 // Width of the QR code (in pixels)
+    width: 100,                 // Width of the QR code (in pixels)
     margin: 4,                  // Margin around the QR code (in modules)
-    errorCorrectionLevel: 'M',  // Error correction level: L, M, Q, H
+    errorCorrectionLevel: 'L',  // Error correction level: L, M, Q, H
     version: 5,                 // QR code version (1 to 40, or auto)
     maskPattern: 6,             // Mask pattern (0 to 7, or auto)
     color: {
@@ -48,15 +48,19 @@ export const VerificationPDF = ({ data = [], id }) => {
 
       <Page size="A4" style={styles.page}>
         <View style={{ display: 'flex', flexDirection: 'row' }}>
-          <View style={{ width: '25%' }}>
+          <View style={{ width: '20%' }}>
             <Image src={require('../images/logo.PNG')} style={{ width: 100 }} />
           </View>
-          <View style={{ width: '75%', textAlign: 'center', fontSize: 14 }}>
+          <View style={{ width: '60%', textAlign: 'center', fontSize: 12 }}>
             <Text style={{ textTransform: 'uppercase', marginTop: 10 }}>
-              National Health Insurance Agency Enrollee Status
+              National Health Insurance Agency Enrollee
             </Text>
-            <Text style={{ textTransform: 'uppercase' }}>Verification Form</Text>
-            <Image src={qr} />
+            <Text style={{ textTransform: 'uppercase' }}> Status Verification Form</Text>
+          </View>
+          <View style={{ width: '20%' }}>
+            <View>
+              <Image src={qr} style={{ width: 100, height: 100 }} />
+            </View>
           </View>
         </View>
         <View style={{ fontSize: 10, marginTop: 10 }}>
