@@ -8,7 +8,7 @@ export default function VerificationNew() {
         <img src={logo} alt="" className="logo" />
       </div>
       <h4 className="app_heading">
-        National Health Insurance Scheme Enrollee Status Verification Form
+        National Health Insurance Agency Enrollee Status Verification Form
       </h4>
 
       <Row>

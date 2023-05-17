@@ -14,7 +14,7 @@ function ViewPrincipal() {
     useEffect(() => {
         // setLoading(true)
         fetch(
-            `http://localhost:34567/api/principalsDependants?id=${id}`,
+            `https://yge.wvi.mybluehost.me/test/nhis-server/api/principalsDependants?id=${id}`,
         )
             .then((response) => response.json())
             .then((data) => {
@@ -35,7 +35,7 @@ function ViewPrincipal() {
                 <img src={logo} alt="" className="logo" />
             </div>
             <h4 className="app_heading">
-                National Health Insurance Scheme Enrollee Status Verification Form
+                National Health Insurance Agency Enrollee Status Verification Form
             </h4>
             {/* {JSON.stringify(principal)} */}
             <Row>
