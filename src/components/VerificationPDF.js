@@ -7,6 +7,8 @@ import {
   StyleSheet,
   Image,
 } from '@react-pdf/renderer'
+import QRCode from "qrcode";
+import { useQuery } from './UseQ';
 // Create styles
 const styles = StyleSheet.create({
   page: {
@@ -17,12 +19,29 @@ const styles = StyleSheet.create({
   },
 })
 
+
 // Create Document Component
-export const VerificationPDF = ({ data = [] }) => {
+export const VerificationPDF = ({ data = [], id }) => {
   const principal = data.filter(a => a.EntityType === 'PRINCIPAL')
   let principalObj = principal.length ? principal[0] : {}
   const spouse = data.filter(a => a.EntityType === 'SPOUSE')
   const children = data.filter(a => a.EntityType.includes('CHILD'))
+
+  const qrCodeOptions = {
+    width: 256,                 // Width of the QR code (in pixels)
+    margin: 4,                  // Margin around the QR code (in modules)
+    errorCorrectionLevel: 'M',  // Error correction level: L, M, Q, H
+    version: 5,                 // QR code version (1 to 40, or auto)
+    maskPattern: 6,             // Mask pattern (0 to 7, or auto)
+    color: {
+      dark: '#000000FF',        // Color of dark modules
+      light: '#FFFFFFFF',       // Color of light modules
+    }
+  };
+
+  const canvas = document.createElement("canvas");
+  QRCode.toCanvas(canvas, `https://nhis-enrolee.netlify.app/view-principal?id=${id}`);
+  const qr = canvas.toDataURL(`https://nhis-enrolee.netlify.app/view-principal?id=${id}`, qrCodeOptions);
   return (
     <Document>
 
@@ -37,6 +56,7 @@ export const VerificationPDF = ({ data = [] }) => {
               National Health Insurance Agency Enrollee Status
             </Text>
             <Text style={{ textTransform: 'uppercase' }}>Verification Form</Text>
+            <Image src={qr} />
           </View>
         </View>
         <View style={{ fontSize: 10, marginTop: 10 }}>

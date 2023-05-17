@@ -100,7 +100,7 @@ function ViewPrincipal() {
                 <Col md={2}></Col>
                 <Col md={8}>
                     <PDFViewer style={{ width: '100%', height: '100vh' }}>
-                        <VerificationPDF data={data} />
+                        <VerificationPDF data={data} id={id} />
                     </PDFViewer>
                 </Col>
                 <Col md={2}></Col>
