@@ -29,7 +29,7 @@ function ViewPrincipal() {
     console.log(id)
     return (
         <div className="p-3">
-            {JSON.stringify(id)}
+            {/* {JSON.stringify(id)} */}
             {JSON.stringify(data)}
             <div className="text-center">
                 <img src={logo} alt="" className="logo" />

@@ -36,7 +36,7 @@ export const VerificationPDF = ({ data}) => (
           </View>
         </View>
         <View style={{ fontSize: 10, marginTop: 10 }}>
-          <Text>NHIS #:{data.Type}</Text>
+          <Text>NHIS #:</Text>
         </View>
         <View>
           <View style={{ borderBottom: '1px solid black', marginTop: 10 }}>
