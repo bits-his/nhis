@@ -53,7 +53,7 @@ export const VerificationPDF = ({ data = [], id }) => {
           </View>
           <View style={{ width: '60%', textAlign: 'center', fontSize: 12 }}>
             <Text style={{ textTransform: 'uppercase', marginTop: 10 }}>
-              National Health Insurance Agency Enrollee
+              National Health Insurance Authority Enrollee
             </Text>
             <Text style={{ textTransform: 'uppercase' }}> Status Verification Form</Text>
           </View>
