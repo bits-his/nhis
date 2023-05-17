@@ -45,7 +45,7 @@ function VerificationList() {
     }, [search])
     useEffect(() => {
         searchPrincipal()
-    }, [search])
+    }, [search, searchPrincipal])
     return (
         <div className="p-3">
             {/* {JSON.stringify(search)} */}
