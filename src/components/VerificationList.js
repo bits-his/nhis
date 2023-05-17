@@ -71,7 +71,7 @@ function VerificationList() {
             </Row>
             <div className="p-3">
                 <input type='search' className='app_input mb-3' name="search"
-                    onChange={handleChanges} placeholder='search...' />
+                    onChange={handleChanges} placeholder='search with name or EMPID' />
                 <Table striped borderless responsive size="sm" style={{ fontSize: 14 }}>
                     <thead>
                         <tr>
