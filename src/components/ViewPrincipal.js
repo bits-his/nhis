@@ -17,8 +17,8 @@ function ViewPrincipal() {
     useEffect(() => {
         // setLoading(true)
         fetch(
-            // `https://yge.wvi.mybluehost.me/test/nhis-server/api/principalsDependants?id=${id}`,
-            `http://localhost:34567/api/principalsDependants?id=${id}`,
+            `https://yge.wvi.mybluehost.me/test/nhis-server/api/principalsDependants?id=${id}`,
+            // `http://localhost:34567/api/principalsDependants?id=${id}`,
         )
             .then((response) => response.json())
             .then((data) => {
