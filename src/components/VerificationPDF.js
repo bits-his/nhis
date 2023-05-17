@@ -8,7 +8,7 @@ import {
   Image,
 } from '@react-pdf/renderer'
 import QRCode from "qrcode";
-import { useQuery } from './UseQ';
+// import { useQuery } from './UseQ';
 // Create styles
 const styles = StyleSheet.create({
   page: {
