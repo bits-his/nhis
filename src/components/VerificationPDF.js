@@ -19,9 +19,14 @@ const styles = StyleSheet.create({
 })
 
 // Create Document Component
-export const VerificationPDF = ({ data}) => (
-  <Document>
-   
+export const VerificationPDF = ({ data = [] }) => {
+  const principal = data.filter(a => a.EntityType === 'PRINCIPAL')
+  let principalObj = principal.length ? principal[0] : {}
+  const spouse = data.filter(a => a.EntityType === 'SPOUSE')
+  const children = data.filter(a => a.EntityType.includes('CHILD'))
+  return (
+    <Document>
+
 
       <Page size="A4" style={styles.page}>
         <View style={{ display: 'flex', flexDirection: 'row' }}>
@@ -36,7 +41,7 @@ export const VerificationPDF = ({ data}) => (
           </View>
         </View>
         <View style={{ fontSize: 10, marginTop: 10 }}>
-          <Text>NHIS #:</Text>
+          <Text>NHIS #:{principalObj.EMPID}</Text>
         </View>
         <View>
           <View style={{ borderBottom: '1px solid black', marginTop: 10 }}>
@@ -46,18 +51,18 @@ export const VerificationPDF = ({ data}) => (
           </View>
           <View style={{ display: 'flex', flexDirection: 'row', fontSize: 10 }}>
             <View style={{ width: '50%', marginTop: 10 }}>
-              <Text style={{ marginBottom: 10 }}>Last Name:</Text>
-              <Text style={{ marginBottom: 10 }}>First Name:</Text>
+              <Text style={{ marginBottom: 10 }}>Last Name:{principalObj.Surname}</Text>
+              <Text style={{ marginBottom: 10 }}>First Name: {principalObj.Firstname}</Text>
               <Text style={{ marginBottom: 10 }}>Middle Name:</Text>
-              <Text style={{ marginBottom: 10 }}>Employee Number:</Text>
+              <Text style={{ marginBottom: 10 }}>Employee Number: {principalObj.EMPID}</Text>
               <Text style={{ marginBottom: 10 }}>State of Posting:</Text>
               <Text style={{ marginBottom: 10 }}>National Id:</Text>
             </View>
             <View style={{ width: '50%', marginTop: 10 }}>
-              <Text style={{ marginBottom: 10 }}>Sex:</Text>
+              <Text style={{ marginBottom: 10 }}>Sex: {principalObj.Gender}</Text>
               <Text style={{ marginBottom: 10 }}>Marital Status:</Text>
               <Text style={{ color: 'white', marginBottom: 10 }}>dfasfas</Text>
-              <Text style={{ marginBottom: 10 }}>Date of Birth:</Text>
+              <Text style={{ marginBottom: 10 }}>Date of Birth: {principalObj.DOBString}</Text>
               <Text style={{ marginBottom: 10 }}>Telephone:</Text>
               <Text style={{ marginBottom: 10 }}>Email Address:</Text>
             </View>
@@ -70,7 +75,7 @@ export const VerificationPDF = ({ data}) => (
           </View>
           <View style={{ display: 'flex', flexDirection: 'row', fontSize: 10 }}>
             <View style={{ width: '50%', marginTop: 10 }}>
-              <Text style={{ marginBottom: 10 }}>Employer:</Text>
+              <Text style={{ marginBottom: 10 }}>Employer: {principalObj.Employer}</Text>
               <Text style={{ marginBottom: 10 }}>Address:</Text>
             </View>
             <View style={{ width: '50%' }}>
@@ -85,8 +90,8 @@ export const VerificationPDF = ({ data}) => (
           </View>
           <View style={{ display: 'flex', flexDirection: 'row' }}>
             <View style={{ width: '50%' }}>
-              <Text style={{ marginBottom: 10, marginTop: 10 }}>HMO:</Text>
-              <Text style={{ marginBottom: 10 }}>HCP:</Text>
+              <Text style={{ marginBottom: 10, marginTop: 10 }}>HMO:{principalObj.HMO_ID}</Text>
+              <Text style={{ marginBottom: 10 }}>HCP: {principalObj.HCPCode}</Text>
             </View>
             <View style={{ width: '50%' }}>
               <Text style={{ color: 'white' }}>dfasfas</Text>
@@ -100,14 +105,18 @@ export const VerificationPDF = ({ data}) => (
             <Text style={{ fontSize: 10 }}>SPOUSE</Text>
           </View>
           <View style={{ display: 'flex', flexDirection: 'row' }}>
-            <View style={{ width: '50%' }}>
-              <Text style={{ marginBottom: 10, marginTop: 10 }}>Last Name:</Text>
-              <Text style={{ marginBottom: 10 }}>First Name:</Text>
-              <Text style={{ marginBottom: 10 }}>Date of Birth:</Text>
-            </View>
-            <View style={{ width: '50%' }}>
-              <Text style={{ marginBottom: 10, marginTop: 10 }}>Sex:</Text>
-            </View>
+            {spouse.map((s) =>
+              <>
+                <View style={{ width: '50%' }}>
+                  <Text style={{ marginBottom: 10, marginTop: 10 }}>Last Name: {s.Surname}</Text>
+                  <Text style={{ marginBottom: 10 }}>First Name: {s.Firstname}</Text>
+                  <Text style={{ marginBottom: 10 }}>Date of Birth: {s.DOBString}</Text>
+                </View>
+                <View style={{ width: '50%' }}>
+                  <Text style={{ marginBottom: 10, marginTop: 10 }}>Sex: {s.Gender}</Text>
+                </View>
+              </>
+            )}
           </View>
         </View>
 
@@ -138,28 +147,31 @@ export const VerificationPDF = ({ data}) => (
               <Text style={{ marginTop: 5 }}>ALT HCP</Text>
             </View>
           </View>
-          <View
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-            }}
-          >
-            <View style={{ width: '20%' }}>
-              <Text style={{ marginTop: 5 }}>fafasfsdfsa</Text>
+          {children.map((c) =>
+            <View
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+              }}
+            >
+              <View style={{ width: '20%' }}>
+                <Text style={{ marginTop: 2, fontSize: 8 }}>{c.Firstname}</Text>
+              </View>
+              <View style={{ width: '20%' }}>
+                <Text style={{ marginTop: 2, fontSize: 8 }}>{c.Surname}</Text>
+              </View>
+              <View style={{ width: '20%' }}>
+                <Text style={{ marginTop: 2, fontSize: 8 }}>{c.Gender}</Text>
+              </View>
+              <View style={{ width: '20%' }}>
+                <Text style={{ marginTop: 2, fontSize: 8 }}>{c.DOBString}</Text>
+              </View>
+              <View style={{ width: '20%' }}>
+                <Text style={{ marginTop: 2, fontSize: 8 }}>{c.HCPName}</Text>
+              </View>
             </View>
-            <View style={{ width: '20%' }}>
-              <Text style={{ marginTop: 5 }}>fafasfsdfsa</Text>
-            </View>
-            <View style={{ width: '20%' }}>
-              <Text style={{ marginTop: 5 }}>fafasfsdfsa</Text>
-            </View>
-            <View style={{ width: '20%' }}>
-              <Text style={{ marginTop: 5 }}>fafasfsdfsa</Text>
-            </View>
-            <View style={{ width: '20%' }}>
-              <Text style={{ marginTop: 5 }}>fafasfsdfsa</Text>
-            </View>
-          </View>
+          )}
+
         </View>
         <View>
           <View style={{ borderBottom: '1px solid black', marginTop: 10 }}>
@@ -197,19 +209,19 @@ export const VerificationPDF = ({ data}) => (
             }}
           >
             <View style={{ width: '20%' }}>
-              <Text style={{ marginTop: 5 }}>fafasfsdfsa</Text>
+              <Text style={{ marginTop: 5 }}></Text>
             </View>
             <View style={{ width: '20%' }}>
-              <Text style={{ marginTop: 5 }}>fafasfsdfsa</Text>
+              <Text style={{ marginTop: 5 }}></Text>
             </View>
             <View style={{ width: '20%' }}>
-              <Text style={{ marginTop: 5 }}>fafasfsdfsa</Text>
+              <Text style={{ marginTop: 5 }}></Text>
             </View>
             <View style={{ width: '20%' }}>
-              <Text style={{ marginTop: 5 }}>fafasfsdfsa</Text>
+              <Text style={{ marginTop: 5 }}></Text>
             </View>
             <View style={{ width: '20%' }}>
-              <Text style={{ marginTop: 5 }}>fafasfsdfsa</Text>
+              <Text style={{ marginTop: 5 }}></Text>
             </View>
           </View>
         </View>
@@ -237,6 +249,6 @@ export const VerificationPDF = ({ data}) => (
         </View>
       </Page>
 
-    ))}
-  </Document>
-)
+    </Document>
+  )
+}
