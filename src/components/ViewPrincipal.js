@@ -37,7 +37,7 @@ function ViewPrincipal() {
                 <img src={require('../images/logo.PNG')} alt="" className="logo" />
             </div>
             <h4 className="app_heading">
-                National Health Insurance Agency Enrollee Status Verification Portal
+                National Health Insurance Authority Enrollee Status Verification Portal
             </h4>
             {/* {JSON.stringify(principal)} */}
             <Row className='mt-5 mb-2 web_div'>
