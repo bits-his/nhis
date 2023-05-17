@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { Col, Row, Table } from 'reactstrap'
+import { Row, Table } from 'reactstrap'
 import logo from '../images/logo.png'
 import { useNavigate } from 'react-router-dom'
 
