@@ -32,7 +32,7 @@ function ViewPrincipal() {
     return (
         <div className="p-3">
             {/* {JSON.stringify(id)} */}
-            {/* {JSON.stringify(data)} */}
+            {JSON.stringify(data)}
             <div className="text-center">
                 <img src={require('../images/logo.PNG')} alt="" className="logo" />
             </div>

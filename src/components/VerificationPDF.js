@@ -90,7 +90,7 @@ export const VerificationPDF = ({ data = [] }) => {
           <View style={{ display: 'flex', flexDirection: 'row' }}>
             <View style={{ width: '50%' }}>
               <Text style={{ marginBottom: 10, marginTop: 10 }}>HMO:{principalObj.HMO_ID}</Text>
-              <Text style={{ marginBottom: 10 }}>HCP: {principalObj.HCPCode}</Text>
+              <Text style={{ marginBottom: 10 }}>HCP: {principalObj.HCPName}</Text>
             </View>
             <View style={{ width: '50%' }}>
               <Text style={{ color: 'white' }}>dfasfas</Text>
