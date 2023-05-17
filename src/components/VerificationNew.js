@@ -4,7 +4,7 @@ export default function VerificationNew() {
   return (
     <div className="p-3">
       <div className="text-center">
-        <img src={require('../images/logo.png')} alt="" className="logo" />
+        <img src={require('../images/logo.PNG')} alt="" className="logo" />
       </div>
       <h4 className="app_heading">
         National Health Insurance Agency Enrollee Status Verification Form
