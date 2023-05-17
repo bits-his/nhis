@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Row } from 'reactstrap'
-import logo from '../images/logo.png'
-// import { useParams } from 'react-router-dom'
 import { useQuery } from './UseQ'
 import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer'
 import { VerificationPDF } from './VerificationPDF'
@@ -36,7 +34,7 @@ function ViewPrincipal() {
             {/* {JSON.stringify(id)} */}
             {/* {JSON.stringify(data)} */}
             <div className="text-center">
-                <img src={logo} alt="" className="logo" />
+                <img src={require('../images/logo.png')} alt="" className="logo" />
             </div>
             <h4 className="app_heading">
                 National Health Insurance Agency Enrollee Status Verification Form

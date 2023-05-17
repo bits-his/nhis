@@ -7,7 +7,6 @@ import {
   StyleSheet,
   Image,
 } from '@react-pdf/renderer'
-import logo from '../images/logo.png'
 // Create styles
 const styles = StyleSheet.create({
   page: {
@@ -31,7 +30,7 @@ export const VerificationPDF = ({ data = [] }) => {
       <Page size="A4" style={styles.page}>
         <View style={{ display: 'flex', flexDirection: 'row' }}>
           <View style={{ width: '25%' }}>
-            <Image src={logo} style={{ width: 100 }} />
+            <Image src={require('../images/logo.png')} style={{ width: 100 }} />
           </View>
           <View style={{ width: '75%', textAlign: 'center', fontSize: 14 }}>
             <Text style={{ textTransform: 'uppercase', marginTop: 10 }}>

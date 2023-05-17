@@ -1,11 +1,10 @@
 import React from 'react'
-import logo from '../images/logo.png'
 import { Col, Row } from 'reactstrap'
 export default function VerificationNew() {
   return (
     <div className="p-3">
       <div className="text-center">
-        <img src={logo} alt="" className="logo" />
+        <img src={require('../images/logo.png')} alt="" className="logo" />
       </div>
       <h4 className="app_heading">
         National Health Insurance Agency Enrollee Status Verification Form

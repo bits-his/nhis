@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { Row, Table } from 'reactstrap'
-import logo from '../images/logo.png'
 import { useNavigate } from 'react-router-dom'
 
 function VerificationList() {
@@ -50,7 +49,7 @@ function VerificationList() {
         <div className="p-3">
             {/* {JSON.stringify(search)} */}
             <div className="text-center">
-                <img src={logo} alt="" className="logo" />
+                <img src={require('../images/logo.png')} alt="" className="logo" />
             </div>
             <h4 className="app_heading">
                 National Health Insurance Agency Enrollee Status Verification Portal
