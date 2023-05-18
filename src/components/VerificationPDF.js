@@ -85,7 +85,7 @@ export const VerificationPDF = ({ data = [], id }) => {
               <Text style={{ marginBottom: 10 }}>Sex: {principalObj.Gender}</Text>
               <Text style={{ marginBottom: 10 }}>Marital Status:</Text>
               <Text style={{ color: 'white', marginBottom: 10 }}>dfasfas</Text>
-              <Text style={{ marginBottom: 10 }}>Date of Birth: {moment(principalObj.DOBString).format('MMM DD YYYY')}</Text>
+              <Text style={{ marginBottom: 10 }}>Date of Birth: {moment(principalObj.DOBString).format('MMM DD, YYYY')}</Text>
               <Text style={{ marginBottom: 10 }}>Telephone:</Text>
               <Text style={{ marginBottom: 10 }}>Email Address:</Text>
             </View>
@@ -133,7 +133,7 @@ export const VerificationPDF = ({ data = [], id }) => {
                 <View style={{ width: '50%' }}>
                   <Text style={{ marginBottom: 10, marginTop: 10 }}>Last Name: {s.Surname}</Text>
                   <Text style={{ marginBottom: 10 }}>First Name: {s.Firstname}</Text>
-                  <Text style={{ marginBottom: 10 }}>Date of Birth: {moment(s.DOBString).format('MMM DD YYYY')}</Text>
+                  <Text style={{ marginBottom: 10 }}>Date of Birth: {moment(s.DOBString).format('MMM DD, YYYY')}</Text>
                 </View>
                 <View style={{ width: '50%' }}>
                   <Text style={{ marginBottom: 10, marginTop: 10 }}>Sex: {s.Gender}</Text>
@@ -187,7 +187,7 @@ export const VerificationPDF = ({ data = [], id }) => {
                 <Text style={{ marginTop: 2, fontSize: 8 }}>{c.Gender}</Text>
               </View>
               <View style={{ width: '20%' }}>
-                <Text style={{ marginTop: 2, fontSize: 8 }}>{moment(c.DOBString).format('MMM DD YYYY')}</Text>
+                <Text style={{ marginTop: 2, fontSize: 8 }}>{moment(c.DOBString).format('MMM DD, YYYY')}</Text>
               </View>
               <View style={{ width: '20%' }}>
                 <Text style={{ marginTop: 2, fontSize: 8 }}>{c.HCPName}</Text>

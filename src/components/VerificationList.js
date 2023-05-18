@@ -101,7 +101,7 @@ function VerificationList() {
                                     <td>{item.Firstname}</td>
                                     <td>{item.Surname}</td>
                                     <td>{item.Type}</td>
-                                    <td>{moment(item.DOBString).format('MMM DD YYYY')}</td>
+                                    <td>{moment(item.DOBString).format('MMM DD, YYYY')}</td>
                                     <td>{item.EntityType}</td>
                                     <td>{item.Gender}</td>
                                     <td>{item.Employer}</td>
