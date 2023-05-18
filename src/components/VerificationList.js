@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { Row, Table } from 'reactstrap'
 import { useNavigate } from 'react-router-dom'
+import moment from 'moment'
 
 function VerificationList() {
     const navigate = useNavigate()
@@ -104,7 +105,7 @@ function VerificationList() {
                                     <td>{item.Firstname}</td>
                                     <td>{item.Surname}</td>
                                     <td>{item.Type}</td>
-                                    <td>{item.DOBString}</td>
+                                    <td>{moment(item.DOBString).format('MMM DD YYYY')}</td>
                                     <td>{item.EntityType}</td>
                                     <td>{item.Gender}</td>
                                     <td>{item.Employer}</td>
