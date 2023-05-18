@@ -256,7 +256,7 @@ export const VerificationPDF = ({ data = [], id }) => {
           </Text>
           <Text>
             your facility for hospital healthcare services. Kindly attend to
-            hime/her.
+            him/her.
           </Text>
           <Text style={{ marginTop: 20 }}>Verified by</Text>
           <View style={{ display: 'flex', flexDirection: 'row', marginTop: 20 }}>

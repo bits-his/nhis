@@ -27,7 +27,6 @@ function VerificationList() {
     const handleChanges = ({ target: { value } }) => {
         setSearch(value);
     };
-
     const searchPrincipal = useCallback(() => {
         fetch(
             `https://yge.wvi.mybluehost.me/test/nhis-server/api/search-principal?name=${search}`,
@@ -94,12 +93,9 @@ function VerificationList() {
                             </td>
                         </tr>
                     </thead>
-
                     {loading ? <span>Loading data...</span> :
-
                         <tbody>
                             {data.map((item, index) => (
-
                                 <tr>
                                     <td>{index + 1}</td>
                                     <td>{item.Firstname}</td>
@@ -114,7 +110,6 @@ function VerificationList() {
                                     <td>{item.HCPCode}</td>
                                     <td>{item.HCPName}</td>
                                     <td>{item.HCPAddress}</td>
-
                                     <td>
                                         <div style={{ textAlign: 'right' }}>
                                             <button className='action_btn' onClick={() => navigate(`/view-principal?id=${item.EMPID}`)}>View</button>
