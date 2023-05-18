@@ -49,7 +49,7 @@ function VerificationList() {
         <div className="p-3">
             {/* {JSON.stringify(search)} */}
             <div className="text-center">
-                <img src={require('../images/logo.PNG')} alt="" className="logo" />
+                <img src={require('../images/logo.jpeg')} alt="" className="logo" />
             </div>
             <h4 className="app_heading">
                 National Health Insurance Authority Enrollee Status Verification Portal

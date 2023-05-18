@@ -7,9 +7,9 @@ import {
   StyleSheet,
   Image,
 } from '@react-pdf/renderer'
+import moment from 'moment';
 import QRCode from "qrcode";
-// import { useQuery } from './UseQ';
-// Create styles
+
 const styles = StyleSheet.create({
   page: {
     paddingTop: 30,
@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
   },
 })
 
-
 // Create Document Component
 export const VerificationPDF = ({ data = [], id }) => {
   const principal = data.filter(a => a.EntityType === 'PRINCIPAL')
@@ -27,6 +26,9 @@ export const VerificationPDF = ({ data = [], id }) => {
   const spouse = data.filter(a => a.EntityType === 'SPOUSE')
   const children = data.filter(a => a.EntityType.includes('CHILD'))
 
+
+  // const principalDOB = principalObj.DOBString.moment('DD MM YYYY')
+  // console.log(principalDOB)
   const qrCodeOptions = {
     width: 100,                 // Width of the QR code (in pixels)
     margin: 4,                  // Margin around the QR code (in modules)
@@ -44,12 +46,10 @@ export const VerificationPDF = ({ data = [], id }) => {
   const qr = canvas.toDataURL(`https://nhis-enrolee.netlify.app/view-principal?id=${id}`, qrCodeOptions);
   return (
     <Document>
-
-
       <Page size="A4" style={styles.page}>
         <View style={{ display: 'flex', flexDirection: 'row' }}>
           <View style={{ width: '20%' }}>
-            <Image src={require('../images/logo.PNG')} style={{ width: 100 }} />
+            <Image src={require('../images/logo.jpeg')} style={{ width: 100 }} />
           </View>
           <View style={{ width: '60%', textAlign: 'center', fontSize: 12 }}>
             <Text style={{ textTransform: 'uppercase', marginTop: 10 }}>
@@ -85,7 +85,7 @@ export const VerificationPDF = ({ data = [], id }) => {
               <Text style={{ marginBottom: 10 }}>Sex: {principalObj.Gender}</Text>
               <Text style={{ marginBottom: 10 }}>Marital Status:</Text>
               <Text style={{ color: 'white', marginBottom: 10 }}>dfasfas</Text>
-              <Text style={{ marginBottom: 10 }}>Date of Birth: {principalObj.DOBString}</Text>
+              <Text style={{ marginBottom: 10 }}>Date of Birth: {moment(principalObj.DOBString).format('MMM DD YYYY')}</Text>
               <Text style={{ marginBottom: 10 }}>Telephone:</Text>
               <Text style={{ marginBottom: 10 }}>Email Address:</Text>
             </View>
@@ -252,11 +252,11 @@ export const VerificationPDF = ({ data = [], id }) => {
         <View style={{ fontSize: 10, marginTop: 50 }}>
           <Text>
             This is to certify that the above named enrolee is currently on the
-            NHIS enrolee register and has chosen
+            NHIA enrolee register and has chosen
           </Text>
 
           <Text>
-            your facility for primary healthcare services. Kindly attend to
+            your facility for hospital healthcare services. Kindly attend to
             hime/her.
           </Text>
           <Text style={{ marginTop: 20 }}>Verified by</Text>
@@ -271,7 +271,6 @@ export const VerificationPDF = ({ data = [], id }) => {
           </View>
         </View>
       </Page>
-
     </Document>
   )
 }
