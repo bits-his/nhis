@@ -5,6 +5,7 @@ import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer'
 import { VerificationPDF } from './VerificationPDF'
 import { ArrowLeft } from 'react-feather'
 import { useNavigate } from 'react-router-dom'
+import { api_url } from '../variable'
 function ViewPrincipal() {
     // const params = useParams()
     // const [loading, setLoading] = useState(false)
@@ -15,7 +16,7 @@ function ViewPrincipal() {
     useEffect(() => {
         // setLoading(true)
         fetch(
-            `https://yge.wvi.mybluehost.me/test/nhis-server/api/principalsDependants?id=${id}`,
+            `${api_url}/principalsDependants?id=${id}`,
             // `http://localhost:34567/api/principalsDependants?id=${id}`,
         )
             .then((response) => response.json())
