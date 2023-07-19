@@ -81,7 +81,7 @@ export const VerificationPDF = ({ data = [], id }) => {
           <View style={{ display: "flex", flexDirection: "row", fontSize: 10 }}>
             <View style={{ width: "50%", marginTop: 10 }}>
               <Text style={{ marginBottom: 10 }}>
-                Last Name:{principalObj.SurName}
+                Last Name:{principalObj.Surname}
               </Text>
               <Text style={{ marginBottom: 10 }}>
                 First Name: {principalObj.FirstName}
