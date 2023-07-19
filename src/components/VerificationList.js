@@ -55,7 +55,7 @@ function VerificationList() {
         <img src={require("../images/logo.jpeg")} alt="" className="logo" />
       </div>
       <h4 className="app_heading">
-        National Health Insurance Authority Enrollee Status Verification Portal
+        National Health Insurance Enrollee Management Portal
       </h4>
 
       <Row className="mb-1 mt-5 mb-0 p-3">
