@@ -56,7 +56,10 @@ function VerificationList() {
       </div>
       <h4 className="app_heading">NYSC Enrollee Management Portal</h4>
       <div className="d-flex mt-5">
-        <Button color="primary">Create New</Button>
+        <Button 
+          color="primary"
+          onClick={() => navigate('/create-new-list')}
+        >Create New</Button>
         <Button
           color="warning"
           className="mx-2 px-5"
@@ -114,7 +117,7 @@ function VerificationList() {
             <tbody>
               {data?.map((item, index) => (
                 <tr>
-                  <td>{index + 1}</td>
+                  <td></td>
                   <td>{item.FirstName}</td>
                   <td>{item.Surname}</td>
                   <td>{item.Type}</td>
