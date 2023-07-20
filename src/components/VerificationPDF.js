@@ -95,14 +95,15 @@ export const VerificationPDF = ({ data = {}, id }) => {
             }}
           >
             <View
-              style={{ width: "100%", margin: "auto", alignItems: "center" }}
+              style={{ width: "50%", margin: "auto", alignItems: "center" }}
             >
-              <Image
-                src={require("../images/logo.jpeg")}
-                style={{ width: 100 }}
-              />
+              <Text>
+                <Text className= 'app_heading'>
+                  National Health Insurance Authority Enrollee Status Verification Portal
+                </Text>
+              </Text>
             </View>
-            <View style={{ width: "100%", margin: "auto", alignItems: 'center' }}>
+            <View style={{ width: "50%", margin: "auto", alignItems: 'center' }}>
               <Image
                 src={require("../images/logo.jpeg")}
                 style={{ width: 100 }}
