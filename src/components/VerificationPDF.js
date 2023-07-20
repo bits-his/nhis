@@ -16,6 +16,9 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
     paddingLeft: 20,
     paddingRight: 20,
+    height: 300 ,
+    backgroundColor: '#e6e6e6',
+    // color: '#fff'
   },
 })
 
@@ -47,260 +50,60 @@ export const VerificationPDF = ({ data = [], id }) => {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        <View style={{ display: "flex", flexDirection: "row" }}>
-          <View style={{ width: "20%" }}>
-            <Image
-              src={require("../images/logo.jpeg")}
-              style={{ width: 100 }}
-            />
-          </View>
-          <View style={{ width: "60%", textAlign: "center", fontSize: 12 }}>
-            <Text style={{ textTransform: "uppercase", marginTop: 10 }}>
-              National Health Insurance Authority Enrollee
-            </Text>
-            <Text style={{ textTransform: "uppercase" }}>
-              {" "}
-              Status Verification Form
-            </Text>
-          </View>
-          <View style={{ width: "20%" }}>
-            <View>
-              <Image src={qr} style={{ width: 100, height: 100 }} />
+        <View style={{backgroundColor: '#fff'}}>
+          <View style={{ display: "flex", flexDirection: "row" ,borderBottom: "1px solid black", marginTop: 10 }}>
+            <View style={{ width: "100%", margin: "auto", alignItems: 'center' }}>
+              <Image
+                src={require("../images/logo.jpeg")}
+                style={{ width: 100 }}
+              />
             </View>
           </View>
-        </View>
-        <View style={{ fontSize: 10, marginTop: 10 }}>
-          <Text>NHIS #:{principalObj.EMPID}</Text>
-        </View>
-        <View>
-          <View style={{ borderBottom: "1px solid black", marginTop: 10 }}>
-            <Text style={{ fontSize: 10, fontStyle: "italic" }}>
-              PRINCIPAL MEMBER DETAILS
-            </Text>
-          </View>
-          <View style={{ display: "flex", flexDirection: "row", fontSize: 10 }}>
-            <View style={{ width: "50%", marginTop: 10 }}>
-              <Text style={{ marginBottom: 10 }}>
-                Last Name:{principalObj.Surname}
+          <View style={{display: 'flex', flexDirection: "row", marginRight: 30}}>
+            <View style={{marginTop: 0, width: "40%", marginLeft: 30}}> 
+              <Text style={{marginBottom: 10, marginTop: 20, fontWeight: "bold" }}>
+                {``} Full Name:
               </Text>
-              <Text style={{ marginBottom: 10 }}>
-                First Name: {principalObj.FirstName}
+              <Text style={{ marginBottom: 10, fontWeight: "bold" }}>
+                {``} Healt ID Number:
               </Text>
-              <Text style={{ marginBottom: 10 }}>
-                Middle Name: {principalObj.MiddleName}
+              <Text style={{marginBottom: 10, fontWeight: "bold" }}>
+                {``} PHR Address:
               </Text>
-              <Text style={{ marginBottom: 10 }}>
-                Employee Number: {principalObj.EMPID}
+              <Text style={{marginBottom: 10, fontWeight: "bold" }}>
+                {``} Date Of Birth:
               </Text>
-              <Text style={{ marginBottom: 10 }}>State of Posting:</Text>
-              <Text style={{ marginBottom: 10 }}>National Id:</Text>
-            </View>
-            <View style={{ width: "50%", marginTop: 10 }}>
-              <Text style={{ marginBottom: 10 }}>
-                Sex: {principalObj.Gender}
+              <Text style={{marginBottom: 10, fontWeight: "bold" }}>
+                {``} Gender:
               </Text>
-              <Text style={{ marginBottom: 10 }}>Marital Status:</Text>
-              <Text style={{ color: "white", marginBottom: 10 }}>dfasfas</Text>
-              <Text style={{ marginBottom: 10 }}>
-                Date of Birth:{" "}
-                {moment(principalObj.DateOfBirth).format("MMM DD, YYYY")}
-              </Text>
-              <Text style={{ marginBottom: 10 }}>Telephone:</Text>
-              <Text style={{ marginBottom: 10 }}>Email Address:</Text>
-            </View>
-          </View>
-        </View>
-
-        <View>
-          <View style={{ borderBottom: "1px solid black", marginTop: 10 }}>
-            <Text style={{ fontSize: 10 }}>EMPLOYMENT DETAILS</Text>
-          </View>
-          <View style={{ display: "flex", flexDirection: "row", fontSize: 10 }}>
-            <View style={{ width: "50%", marginTop: 10 }}>
-              <Text style={{ marginBottom: 10 }}>
-                Employer: {principalObj.Employer}
-              </Text>
-              <Text style={{ marginBottom: 10 }}>Address:</Text>
-            </View>
-            <View style={{ width: "50%" }}>
-              <Text style={{ marginBottom: 10, marginTop: 10 }}>Branch:</Text>
-            </View>
-          </View>
-        </View>
-
-        <View style={{ fontSize: 10 }}>
-          <View style={{ borderBottom: "1px solid black", marginTop: 10 }}>
-            <Text style={{ fontSize: 10 }}>HEALTHCARE OPTIONS</Text>
-          </View>
-          <View style={{ display: "flex", flexDirection: "row" }}>
-            <View style={{ width: "50%" }}>
-              <Text style={{ marginBottom: 10, marginTop: 10 }}>
-                HMO:{principalObj.HMO_ID}
-              </Text>
-              <Text style={{ marginBottom: 10 }}>
-                HCP: {principalObj.HCPName}
+              <Text style={{marginBottom: 10, fontWeight: "bold" }}>
+                {``} Mobile:
               </Text>
             </View>
-            <View style={{ width: "50%" }}>
-              <Text style={{ color: "white" }}>dfasfas</Text>
-              <Text style={{ marginBottom: 10 }}>Alternate HCP:</Text>
+            <View style={{marginTop: 0, width: "40%", marginLeft: 30}}>
+              <Text style={{marginBottom: 10, marginTop: 20, fontWeight: "bold" }}>
+                {``} John Deo
+              </Text>
+              <Text style={{marginBottom: 10, fontWeight: "bold" }}>
+                {``} xx-xxxx-xxxx-xxxx
+              </Text>
+              <Text style={{marginBottom: 10, fontWeight: "bold" }}>
+                {``} Johndoe@ndhm
+              </Text>
+              <Text style={{marginBottom: 10, fontWeight: "bold" }}>
+                {``} 1/12/1992
+              </Text>
+              <Text style={{marginBottom: 10, fontWeight: "bold" }}>
+                {``} Male
+              </Text>
+              <Text style={{marginBottom: 10, fontWeight: "bold" }}>
+                {``} xxxxxxxxxxx
+              </Text>
             </View>
-          </View>
-        </View>
-
-        <View style={{ fontSize: 10 }}>
-          <View style={{ borderBottom: "1px solid black", marginTop: 10 }}>
-            <Text style={{ fontSize: 10 }}>SPOUSE</Text>
-          </View>
-          <View style={{ display: "flex", flexDirection: "row" }}>
-            {spouse?.map((s) => (
-              <>
-                <View style={{ width: "50%" }}>
-                  <Text style={{ marginBottom: 10, marginTop: 10 }}>
-                    Last Name: {s.Surname}
-                  </Text>
-                  <Text style={{ marginBottom: 10 }}>
-                    First Name: {s.Firstname}
-                  </Text>
-                  <Text style={{ marginBottom: 10 }}>
-                    Date of Birth: {moment(s.DOBString).format("MMM DD, YYYY")}
-                  </Text>
-                </View>
-                <View style={{ width: "50%" }}>
-                  <Text style={{ marginBottom: 10, marginTop: 10 }}>
-                    Sex: {s.Gender}
-                  </Text>
-                </View>
-              </>
-            ))}
-          </View>
-        </View>
-
-        <View style={{ fontSize: 10 }}>
-          <View style={{ borderBottom: "1px solid black", marginTop: 10 }}>
-            <Text style={{ fontSize: 10 }}>CHILDREN</Text>
-          </View>
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              borderBottom: "1px solid grey",
-            }}
-          >
-            <View style={{ width: "20%" }}>
-              <Text style={{ marginTop: 5 }}>FIRST NAME</Text>
-            </View>
-            <View style={{ width: "20%" }}>
-              <Text style={{ marginTop: 5 }}>LAST NAME</Text>
-            </View>
-            <View style={{ width: "20%" }}>
-              <Text style={{ marginTop: 5 }}>GENDER</Text>
-            </View>
-            <View style={{ width: "20%" }}>
-              <Text style={{ marginTop: 5 }}>DATE OF BIRTH</Text>
-            </View>
-            <View style={{ width: "20%" }}>
-              <Text style={{ marginTop: 5 }}>ALT HCP</Text>
-            </View>
-          </View>
-          {children.map((c) => (
-            <View
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <View style={{ width: "20%" }}>
-                <Text style={{ marginTop: 2, fontSize: 8 }}>{c.Firstname}</Text>
+            <View style={{ width: "20%", marginTop: 50 }}>
+              <View style={{border: '1px solid black' }}>
+                <Image src={qr} style={{ width: 100, height: 100, marginRight: 50 }} />
               </View>
-              <View style={{ width: "20%" }}>
-                <Text style={{ marginTop: 2, fontSize: 8 }}>{c.Surname}</Text>
-              </View>
-              <View style={{ width: "20%" }}>
-                <Text style={{ marginTop: 2, fontSize: 8 }}>{c.Gender}</Text>
-              </View>
-              <View style={{ width: "20%" }}>
-                <Text style={{ marginTop: 2, fontSize: 8 }}>
-                  {moment(c.DOBString).format("MMM DD, YYYY")}
-                </Text>
-              </View>
-              <View style={{ width: "20%" }}>
-                <Text style={{ marginTop: 2, fontSize: 8 }}>{c.HCPName}</Text>
-              </View>
-            </View>
-          ))}
-        </View>
-        <View>
-          <View style={{ borderBottom: "1px solid black", marginTop: 10 }}>
-            <Text style={{ fontSize: 10 }}>EXTRA DEPENDENTS</Text>
-          </View>
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              borderBottom: "1px solid grey",
-              fontSize: 10,
-            }}
-          >
-            <View style={{ width: "20%" }}>
-              <Text style={{ marginTop: 5 }}>FIRST NAME</Text>
-            </View>
-            <View style={{ width: "20%" }}>
-              <Text style={{ marginTop: 5 }}>LAST NAME</Text>
-            </View>
-            <View style={{ width: "20%" }}>
-              <Text style={{ marginTop: 5 }}>GENDER</Text>
-            </View>
-            <View style={{ width: "20%" }}>
-              <Text style={{ marginTop: 5 }}>DATE OF BIRTH</Text>
-            </View>
-            <View style={{ width: "20%" }}>
-              <Text style={{ marginTop: 5 }}>ALT HCP</Text>
-            </View>
-          </View>
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              fontSize: 10,
-            }}
-          >
-            <View style={{ width: "20%" }}>
-              <Text style={{ marginTop: 5 }}></Text>
-            </View>
-            <View style={{ width: "20%" }}>
-              <Text style={{ marginTop: 5 }}></Text>
-            </View>
-            <View style={{ width: "20%" }}>
-              <Text style={{ marginTop: 5 }}></Text>
-            </View>
-            <View style={{ width: "20%" }}>
-              <Text style={{ marginTop: 5 }}></Text>
-            </View>
-            <View style={{ width: "20%" }}>
-              <Text style={{ marginTop: 5 }}></Text>
-            </View>
-          </View>
-        </View>
-
-        <View style={{ fontSize: 10, marginTop: 50 }}>
-          <Text>
-            This is to certify that the above named enrolee is currently on the
-            NHIA enrolee register and has chosen
-          </Text>
-          <Text>
-            your facility for hospital healthcare services. Kindly attend to
-            him/her.
-          </Text>
-          <Text style={{ marginTop: 20 }}>Verified by</Text>
-          <View
-            style={{ display: "flex", flexDirection: "row", marginTop: 20 }}
-          >
-            <View style={{ width: "50%" }}>
-              <Text>Name:___________________________________</Text>
-            </View>
-            <View style={{ width: "50%" }}>
-              <Text>Signature & Date:______________________________</Text>
             </View>
           </View>
         </View>
