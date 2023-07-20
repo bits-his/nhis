@@ -16,18 +16,17 @@ function ViewPrincipal() {
     useEffect(() => {
         // setLoading(true)
         fetch(
-            `${api_url}/principalsDependants?id=${id}`,
-            // `http://localhost:34567/api/principalsDependants?id=${id}`,
+          `${api_url}/select_erollee?id=${id}`
         )
-            .then((response) => response.json())
-            .then((data) => {
-                // setLoading(false)
-                setData(data.results)
-            })
-            .catch((err) => {
-                // setLoading(false)
-                console.log(err)
-            })
+          .then((response) => response.json())
+          .then((data) => {
+            // setLoading(false)
+            setData(data.results);
+          })
+          .catch((err) => {
+            // setLoading(false)
+            console.log(err);
+          });
     }, [id])
     console.log(id)
     return (
