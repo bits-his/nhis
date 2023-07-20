@@ -4,10 +4,13 @@ import { useDropzone } from "react-dropzone";
 import * as XLSX from "xlsx";
 import { _postApi } from "./api";
 import { Spinner } from "reactstrap";
+import { useNavigate } from "react-router-dom";
+import { SkipBack } from "react-feather";
 
 const ExcelImporter = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const onDrop = (acceptedFiles) => {
     const file = acceptedFiles[0];
     const reader = new FileReader();
@@ -25,7 +28,7 @@ const ExcelImporter = () => {
   };
 
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
-
+  ///post_payment_schedule
   const handleSubmit = () => {
     setLoading(true);
     _postApi(
@@ -34,6 +37,8 @@ const ExcelImporter = () => {
       (response) => {
         console.log("Data submitted successfully:", response.data);
         setLoading(false);
+        alert(response.message);
+        navigate("/");
       },
       (err) => {
         setLoading(false);
@@ -44,9 +49,31 @@ const ExcelImporter = () => {
 
   return (
     <Container>
-      <div {...getRootProps()} style={{ cursor: "pointer", marginBottom: 20 }}>
+      <div className="d-flex ">
+        <div
+          onClick={() => navigate("/")}
+          style={{ cursor: "pointer" }}
+          className="my-3 text-primary"
+        >
+          <SkipBack /> Go Back
+        </div>
+        <h1 className="text-center text-secondary display-4 mx-3">
+          Upload excel file here
+        </h1>
+      </div>
+      <div
+        {...getRootProps()}
+        style={{
+          cursor: "pointer",
+          marginBottom: 20,
+          fontWeight: "700",
+          marginTop: 20,
+        }}
+      >
         <input {...getInputProps()} />
-        <div>Drag and drop an Excel file here, or click to select one</div>
+        <div className="jumbotron bg-light p-5 rounded font-weight-bold">
+          Drag and drop an Excel file here, or click to select one
+        </div>
       </div>
 
       {data.length > 0 && (

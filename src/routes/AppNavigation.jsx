@@ -1,21 +1,17 @@
-import { useRoutes } from 'react-router-dom'
-import AppIndex from './AppIndex'
-import VerificationNew from '../components/VerificationNew'
-import VerificationList from '../components/VerificationList'
-import ViewPrincipal from '../components/ViewPrincipal'
-import ExcelImporter from '../components/ExcelImporter'
+import { useRoutes } from "react-router-dom";
+import AppIndex from "./AppIndex";
+import VerificationNew from "../components/VerificationNew";
+import VerificationList from "../components/VerificationList";
+import ViewPrincipal from "../components/ViewPrincipal";
+import ExcelImporter from "../components/ExcelImporter";
 
 function AppNavigation() {
   let element = useRoutes([
     {
       path: "/",
-      element: <VerificationList />,
-      children: [{ index: true }],
-    },
-    {
       element: <AppIndex />,
       children: [
-        { index: true, element: <AppIndex /> },
+        { index: true, element: <VerificationList /> },
         {
           path: "/new-verification",
           element: <VerificationNew />,
@@ -31,6 +27,6 @@ function AppNavigation() {
       ],
     },
   ]);
-  return element
+  return element;
 }
-export default AppNavigation
+export default AppNavigation;
