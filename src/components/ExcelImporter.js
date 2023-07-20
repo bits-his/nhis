@@ -5,7 +5,7 @@ import * as XLSX from "xlsx";
 import { _postApi } from "./api";
 import { Spinner } from "reactstrap";
 import { useNavigate } from "react-router-dom";
-import { SkipBack } from "react-feather";
+import { ArrowLeft } from "react-feather";
 
 const ExcelImporter = () => {
   const [data, setData] = useState([]);
@@ -55,7 +55,8 @@ const ExcelImporter = () => {
           style={{ cursor: "pointer" }}
           className="my-3 text-primary"
         >
-          <SkipBack /> Go Back
+          <ArrowLeft />
+          Go Back
         </div>
         <h1 className="text-center text-secondary display-4 mx-3">
           Upload excel file here

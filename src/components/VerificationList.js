@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Button, Row, Spinner, Table } from "reactstrap";
 import { useNavigate } from "react-router-dom";
-import moment from "moment";
+// import moment from "moment";
 import { api_url } from "../variable";
 
 function VerificationList() {
@@ -148,7 +148,7 @@ function VerificationList() {
                     <button
                       className="action_btn"
                       onClick={() =>
-                        navigate(`/view-principal?id=${item.EMPID}`)
+                        navigate(`/view-principal?id=${item.id}`)
                       }
                     >
                       View

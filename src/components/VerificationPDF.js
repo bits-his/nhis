@@ -7,7 +7,7 @@ import {
   StyleSheet,
   Image,
 } from '@react-pdf/renderer'
-import moment from 'moment';
+// import moment from 'moment';
 import QRCode from "qrcode";
 
 const styles = StyleSheet.create({
@@ -24,10 +24,10 @@ const styles = StyleSheet.create({
 
 // Create Document Component
 export const VerificationPDF = ({ data = [], id }) => {
-  const principal = data.filter(a => a.EntityType === 'PRINCIPAL')
-  let principalObj = principal.length ? principal[0] : {}
-  const spouse = data.filter(a => a.EntityType === 'SPOUSE')
-  const children = data.filter(a => a.EntityType.includes('CHILD'))
+  // const principal = data.filter(a => a.EntityType === 'PRINCIPAL')
+  // let principalObj = principal.length ? principal[0] : {}
+  // const spouse = data.filter(a => a.EntityType === 'SPOUSE')
+  // const children = data.filter(a => a.EntityType.includes('CHILD'))
 
 
   // const principalDOB = principalObj.DOBString.moment('DD MM YYYY')
