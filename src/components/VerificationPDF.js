@@ -98,7 +98,7 @@ export const VerificationPDF = ({ data = {}, id }) => {
               style={{ width: "50%", margin: "auto", alignItems: "center" }}
             >
               <Text>
-                <Text className= 'app_heading'>
+                <Text className= 'app_heading' style={{textAlign: 'left'}}>
                   National Health Insurance Authority Enrollee Status Verification Portal
                 </Text>
               </Text>
