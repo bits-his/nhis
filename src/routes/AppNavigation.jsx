@@ -1,11 +1,7 @@
 import { useRoutes } from 'react-router-dom'
 import AppIndex from './AppIndex'
-<<<<<<< HEAD
-import VerificationList from '../components/VerificationList'
-=======
 import VerificationNew from '../components/VerificationNew'
 // import VerificationList from '../components/VerificationList'
->>>>>>> f71b2c41cce58869171314f9e0be975e348cfc02
 import ViewPrincipal from '../components/ViewPrincipal'
 import ExcelImporter from '../components/ExcelImporter'
 import Project from '../components/Project'
