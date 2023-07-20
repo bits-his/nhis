@@ -107,10 +107,11 @@ export default function Project() {
               value={form.nhia}
               id="nhia"
               onChange={(e) => handleChange(e)}
+              type= 'number'
             />
           </Col>
           <Col md={4}>
-            <label>Program_type</label>
+            <label>Program Type</label>
             <InputForm
               value={form.program_type}
               id="program_type"
@@ -147,18 +148,25 @@ export default function Project() {
               value={form.dob}
               id="dob"
               onChange={(e) => handleChange(e)}
+              type= 'date'
             />
           </Col>
           <Col md={4}>
             <label>Gender</label>
-            <InputForm
+            <select
+              className='input_tag_card'
               value={form.gender}
               id="gender"
               onChange={(e) => handleChange(e)}
-            />
+            >
+              <option>select .......</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
           </Col>
           <Col md={4}>
-            <label>Entity_type</label>
+            <label>Entity Type</label>
             <InputForm
               value={form.entity__tpye}
               id="entity__tpye"
@@ -167,15 +175,16 @@ export default function Project() {
           </Col>
 
           <Col md={4}>
-            <label>hmo_code</label>
+            <label>HMO Code</label>
             <InputForm
               value={form.hmo_code}
               id="hmo_code"
+              type='number'
               onChange={(e) => handleChange(e)}
             />
           </Col>
           <Col md={4}>
-            <label>hmo</label>
+            <label>HMO</label>
             <InputForm
               value={form.hmo}
               id="hmo"
@@ -192,49 +201,59 @@ export default function Project() {
             />
           </Col>
           <Col md={4}>
-            <label>Martial_status</label>
-            <InputForm
+            <label>Martial Status</label>
+            <select
+              className='input_tag_card'
               value={form.martial_status}
               id="martial_status"
               onChange={(e) => handleChange(e)}
-            />
+            >
+              <option>select .......</option>
+              <option>Married</option>
+              <option>Single</option>
+              <option>Other</option>
+            </select>
           </Col>
           <Col md={4}>
-            <label>Year_of_p</label>
+            <label>Year of Posting</label>
             <InputForm
               value={form.year_of_p}
               id="year_of_p"
+              type= 'Number'
               onChange={(e) => handleChange(e)}
             />
           </Col>
 
           <Col md={4}>
-            <label>Callup_no</label>
+            <label>CallUp No</label>
             <InputForm
               value={form.callup_no}
               id="callup_no"
+              type= 'number'
               onChange={(e) => handleChange(e)}
             />
           </Col>
           <Col md={4}>
-            <label>State_code</label>
+            <label>State Code</label>
             <InputForm
               value={form.state_code}
               id="state_code"
+              type= "number"
               onChange={(e) => handleChange(e)}
             />
           </Col>
           <Col md={4}>
-            <label>services_year</label>
+            <label>Services Year</label>
             <InputForm
               value={form.services_year}
               id="services_year"
+              type= 'number'
               onChange={(e) => handleChange(e)}
             />
           </Col>
 
           <Col md={4}>
-            <label>Service_batch</label>
+            <label>Service Batch</label>
             <InputForm
               value={form.services_batch}
               id="services_batch"
@@ -250,7 +269,7 @@ export default function Project() {
             />
           </Col>
           <Col md={4}>
-            <label>State_of_origin</label>
+            <label>State of Origin</label>
             <InputForm
               value={form.state_of_origin}
               id="state_of_origin"
@@ -259,7 +278,7 @@ export default function Project() {
           </Col>
 
           <Col md={4}>
-            <label>State_of_p</label>
+            <label>State of Posting</label>
             <InputForm
               value={form.state_of_p}
               id="state_of_p"
@@ -267,23 +286,25 @@ export default function Project() {
             />
           </Col>
           <Col md={4}>
-            <label>start_date</label>
+            <label>Start Date</label>
             <InputForm
               value={form.start_date}
               id="start_date"
+              type='date'
               onChange={(e) => handleChange(e)}
             />
           </Col>
           <Col md={4}>
-            <label>end_date</label>
+            <label>End Date</label>
             <InputForm
               value={form.end_date}
               id="end_date"
+              type='date'
               onChange={(e) => handleChange(e)}
             />
           </Col>
           <Col md={4}>
-            <label>zone</label>
+            <label>Zone</label>
             <InputForm
               value={form.zone}
               id="zone"
@@ -291,15 +312,16 @@ export default function Project() {
             />
           </Col>
           <Col md={4}>
-            <label>zone_id</label>
+            <label>Zone ID</label>
             <InputForm
               value={form.zone_id}
               id="zone_id"
+              type= 'number'
               onChange={(e) => handleChange(e)}
             />
           </Col>
           <Col md={4}>
-            <label>state_of_c</label>
+            <label>State of C</label>
             <InputForm
               onChange={(e) => handleChange(e)}
               value={form.state_of_c}

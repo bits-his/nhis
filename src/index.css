@@ -140,3 +140,10 @@
     border-radius: 5px;
     margin-top: 10px;
 }
+
+.input_tag_card{
+    padding: 6px;
+    width: 100%;
+    outline: none;
+    margin-bottom: 6px;
+}

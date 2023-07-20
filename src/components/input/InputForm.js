@@ -7,7 +7,7 @@ export default function InputForm(props) {
         {props.label&&
         <Label style={{fontWeight: 'lighter'}}> 
         {props.label} {props.required&&<span className='text-danger'>*</span>}</Label>}
-        <input style={{padding: 5}} {...props}/>
+        <input className='input_tag_card' {...props}/>
     </div>
   )
 }
