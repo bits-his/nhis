@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { PieChart, Pie, ResponsiveContainer } from "recharts";
+import { PieChart, Pie } from "recharts";
 
 const data01 = [
   { name: "Group A", value: 400 },
@@ -24,7 +24,7 @@ const data02 = [
 export default class TwoLevelPieChart extends PureComponent {
   render() {
     return (
-      <ResponsiveContainer width="100%" height="100%">
+      // <ResponsiveContainer width="100%" height="100%">
         <PieChart width={700} height={300}>
           <Pie
             data={data01}
@@ -45,7 +45,7 @@ export default class TwoLevelPieChart extends PureComponent {
             label
           />
         </PieChart>
-      </ResponsiveContainer>
+      // </ResponsiveCon                                                                                                      tainer>
     );
   }
 }

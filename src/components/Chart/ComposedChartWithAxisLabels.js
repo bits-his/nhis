@@ -9,7 +9,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer,
+  // ResponsiveContainer,
 } from "recharts";
 
 const data = [
@@ -54,7 +54,7 @@ const data = [
 export default class ComposedChartWithAxisLabels extends PureComponent {
   render() {
     return (
-      <ResponsiveContainer width="100%" height="100%">
+      // <ResponsiveContainer width="100%" height="100%">
         <ComposedChart
           width={700}
           height={300}
@@ -81,7 +81,7 @@ export default class ComposedChartWithAxisLabels extends PureComponent {
           <Bar dataKey="pv" barSize={20} fill="#413ea0" />
           <Line type="monotone" dataKey="uv" stroke="#ff7300" />
         </ComposedChart>
-      </ResponsiveContainer>
+      // {/* </ResponsiveContainer> */}
     );
   }
 }

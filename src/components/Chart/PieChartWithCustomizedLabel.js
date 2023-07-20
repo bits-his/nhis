@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { PieChart, Pie,  Cell, ResponsiveContainer } from "recharts";
+import { PieChart, Pie,  Cell } from "recharts";
 
 const data = [
   { name: "Group A", value: 400 },
@@ -28,8 +28,7 @@ const renderCustomizedLabel = ({
     <text
       x={x}
       y={y}
-      fill="white"
-      textAnchor={x > cx ? "start" : "end"}
+      fResponsiveConextAnchor={x > cx ? "start" : "end"}
       dominantBaseline="central"
     >
       {`${(percent * 100).toFixed(0)}%`}
@@ -43,7 +42,7 @@ export default class PieChartWithCustomizedLabel extends PureComponent {
 
   render() {
     return (
-      <ResponsiveContainer width="100%" height="100%">
+      // <ResponsiveContainer width="100%" height="100%">
         <PieChart width={400} height={400}>
           <Pie
             data={data}
@@ -63,7 +62,7 @@ export default class PieChartWithCustomizedLabel extends PureComponent {
             ))}
           </Pie>
         </PieChart>
-      </ResponsiveContainer>
+      // </ResponsiveContainer>
     );
   }
 }
