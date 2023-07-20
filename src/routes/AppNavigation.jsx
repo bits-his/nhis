@@ -1,9 +1,10 @@
-import { useRoutes } from "react-router-dom";
-import AppIndex from "./AppIndex";
-import VerificationNew from "../components/VerificationNew";
-import VerificationList from "../components/VerificationList";
-import ViewPrincipal from "../components/ViewPrincipal";
-import ExcelImporter from "../components/ExcelImporter";
+import { useRoutes } from 'react-router-dom'
+import AppIndex from './AppIndex'
+import VerificationNew from '../components/VerificationNew'
+import VerificationList from '../components/VerificationList'
+import ViewPrincipal from '../components/ViewPrincipal'
+import ExcelImporter from '../components/ExcelImporter'
+import Project from '../components/Project'
 
 function AppNavigation() {
   let element = useRoutes([
@@ -23,6 +24,10 @@ function AppNavigation() {
         {
           path: "/upload",
           element: <ExcelImporter />,
+        },
+        {
+          path: "/create-new-list",
+          element: <Project />,
         },
       ],
     },

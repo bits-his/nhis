@@ -55,7 +55,10 @@ function VerificationList() {
       </div>
       <h4 className="app_heading">NYSC Enrollee Management Portal</h4>
       <div className="d-flex mt-5">
-        <Button color="primary">Create New</Button>
+        <Button 
+          color="primary"
+          onClick={() => navigate('/create-new-list')}
+        >Create New</Button>
         <Button
           color="warning"
           className="mx-2 px-5"
