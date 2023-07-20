@@ -58,6 +58,12 @@ export const VerificationPDF = ({ data = [], id }) => {
                 style={{ width: 100 }}
               />
             </View>
+            <View style={{ width: "100%", margin: "auto", alignItems: 'center' }}>
+              <Image
+                src={require("../images/logo.jpeg")}
+                style={{ width: 100 }}
+              />
+            </View>
           </View>
           <View style={{display: 'flex', flexDirection: "row", marginRight: 30}}>
             <View style={{marginTop: 0, width: "40%", marginLeft: 30}}> 
