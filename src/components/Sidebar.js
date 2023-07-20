@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-globals */
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import { MdDashboard } from 'react-icons/md'
+import { MdCreate, MdDashboard } from 'react-icons/md'
 
 export default function Sidebar() {
     const navigate = useNavigate()
@@ -29,7 +29,7 @@ export default function Sidebar() {
             location.pathname === '/verification-list' && 'active_side_menu'
           }`}
         >
-          <MdDashboard className="icon shadow" />Create New Erollee
+          <MdCreate className="icon shadow" />Create New Erollee
         </li>
       </div>
     </div>
