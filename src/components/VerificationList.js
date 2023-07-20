@@ -3,6 +3,7 @@ import { Button, Row, Spinner, Table } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 // import moment from "moment";
 import { api_url } from "../variable";
+import { ExternalLink, Link } from "react-feather";
 
 function VerificationList() {
   const navigate = useNavigate();
@@ -55,48 +56,22 @@ function VerificationList() {
       </div>
       <h4 className="app_heading">NYSC Enrollee Management Portal</h4>
       <div className="d-flex mt-5">
-        <Button 
-          color="primary"
-          onClick={() => navigate('/create-new-list')}
-        >Create New</Button>
+        <Button
+          style={{ backgroundColor: " rgb(56, 146, 56)" }}
+          // color="primary"
+          onClick={() => navigate("/create-new-list")}
+        >
+          <Link /> Create New
+        </Button>
         <Button
           color="warning"
           className="mx-2 px-5"
           onClick={() => navigate(`/upload`)}
         >
-          Upload Excel
+          <ExternalLink /> Upload Excel
         </Button>
       </div>
-      <Row className="mb-1  mb-0 px-3">
-        {/* <Col md={6}>
-                 "id": 2,
-            "Nhia": "23439",
-            "ProgramType": "N",
-            "Surname": "Adewale",
-            "FirstName": "Muritala",
-            "MiddleName": "Akinyemi",
-            "DateOfBirth": "3920294",
-            "Gender": "M",
-            "EntityType": "FNFN",
-            "HmoCode": "394",
-            "Hmo": "ZKAW",
-            "Email": "ade@gmail.com",
-            "MaritalStatus": "Single",
-            "YearOfP": "2023",
-            "CallupNo": "NYSC/AUE/2022/272416",
-            "StateCode": "fkfkr",
-            "ServiceYear": "2011",
-            "ServiceBatch": "N",
-            "Stream": "2",
-            "StateOfOrigin": "Kano",
-            "StateOfP": "Osun",
-            "StartDate": "2023",
-            "EndDate": "2024",
-            "Zone": "North Central",
-            "ZoneId": "9",
-            "StateOfC": "Kano"
-                </Col> */}
-      </Row>
+      <Row className="mb-1  mb-0 px-3"></Row>
       <div className="p-3">
         <input
           type="search"
@@ -147,9 +122,7 @@ function VerificationList() {
                   <td className="d-flex">
                     <button
                       className="action_btn"
-                      onClick={() =>
-                        navigate(`/view-principal?id=${item.id}`)
-                      }
+                      onClick={() => navigate(`/view-principal?id=${item.id}`)}
                     >
                       View
                     </button>
