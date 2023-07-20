@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Row, Table } from "reactstrap";
+import { Button, Row, Table } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import moment from "moment";
 import { api_url } from "../variable";
@@ -54,11 +54,18 @@ function VerificationList() {
       <div className="text-center">
         <img src={require("../images/logo.jpeg")} alt="" className="logo" />
       </div>
-      <h4 className="app_heading">
-        NYSC Enrollee Management Portal
-      </h4>
-
-      <Row className="mb-1 mt-5 mb-0 p-3">
+      <h4 className="app_heading">NYSC Enrollee Management Portal</h4>
+      <div className="d-flex mt-5">
+        <Button color="primary">Create New</Button>
+        <Button
+          color="warning"
+          className="mx-2 px-5"
+          onClick={() => navigate(`/upload`)}
+        >
+          Upload Excel
+        </Button>
+      </div>
+      <Row className="mb-1  mb-0 px-3">
         {/* <Col md={6}>
                     <h4>Applications</h4>
                 </Col>

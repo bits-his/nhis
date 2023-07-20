@@ -3,11 +3,12 @@ import AppIndex from './AppIndex'
 import VerificationNew from '../components/VerificationNew'
 import VerificationList from '../components/VerificationList'
 import ViewPrincipal from '../components/ViewPrincipal'
+import ExcelImporter from '../components/ExcelImporter'
 
 function AppNavigation() {
   let element = useRoutes([
     {
-      path: '/',
+      path: "/",
       element: <VerificationList />,
       children: [{ index: true }],
     },
@@ -16,16 +17,20 @@ function AppNavigation() {
       children: [
         { index: true, element: <AppIndex /> },
         {
-          path: '/new-verification',
+          path: "/new-verification",
           element: <VerificationNew />,
         },
         {
-          path: '/view-principal',
+          path: "/view-principal",
           element: <ViewPrincipal />,
+        },
+        {
+          path: "/upload",
+          element: <ExcelImporter />,
         },
       ],
     },
-  ])
+  ]);
   return element
 }
 export default AppNavigation
