@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar{
+    margin-left: -20px;
+    margin-top: -40px;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    height: 100vh;
+}
+
+.link {
+  width: 100%;
+}
+
+.link_item{
+    padding-top: 0px;
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 3px;
+    width: 100%;
+    padding: 10px 30px;
+    list-style: none;
+    cursor: pointer;
+    color: #000;
+}
+
+.link_item:hover {
+  background-color: rgb(53, 92, 53);
+  color: #fff;
+}
+
+.image{
+    margin-top: 40px;
+}
+
+.icon {
+    font-size: 26px;
+    margin-right: 10px;
+    background-color: rgb(53, 92, 53);
+    color: #fff;
+    padding: 4px;
+    border-radius: 2px;
+}
+
+.link_item:hover .icon{
+    font-size: 26px;
+    margin-right: 10px;
+    margin-top: -2px;
+    background-color: #fff;
+    color:  rgb(53, 92, 53);
+    padding: 4px;
+    border-radius: 2px;
+}
+
+.active_side_menu {
+  background-color: rgb(53, 92, 53);
+  color: #fff;
+  border-right: 5px solid white;
+  width: 100%;
+}
+
+.active_side_menu .icon{
+    font-size: 26px;
+    margin-right: 10px;
+    margin-top: -2px;
+    background-color: #fff;
+    color:  rgb(53, 92, 53);
+    padding: 4px;
+    border-radius: 2px;
+}
+
+.underlind{
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.sigin_div{
+    margin: auto;
+    font-family: Footlight MT Light;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    color: #fff;
+    border-radius: 15px;
+    margin-top: 8%;
+    /* width: 100%; */
+}
+
+.sign-in{
+    box-sizing: border-box;
+    width: 35%;
+    border: 1px solid white;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    border-radius: 17px;
+    /* cursor: pointer; */
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    color: black;
+    padding: 20px;
+}
+
+.input_tag{
+    width: 100%;
+    padding: 7px 14px;
+    border: 2px solid #808080;
+    border-radius: 8px;
+    outline: none;
+}
+
+.label_tag{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.sign-in-switch {
+    margin-left: 20px;
+    outline: transparent;
+}
+
+.label_switch_tag{
+    margin-top: 20px;
+}
+
+.sign-in-bottom{
+    /* width: 20%; */
+    padding: 7px 80px;
+    background-color: rgb(53, 92, 53);
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.input_tag_card{
+    padding: 6px;
+    width: 100%;
+    outline: none;
+    margin-bottom: 6px;
+}
